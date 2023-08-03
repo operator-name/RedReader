@@ -576,7 +576,7 @@ public class CommentListingFragment extends RRFragment
 				mCommentListingManager.addPostSelfText(paddingLayout);
 			}
 
-			if(!General.isTablet(activity)) {
+			if(!General.isTwoPane(activity)) {
 				activity.setTitle(post.src.getTitle());
 			}
 

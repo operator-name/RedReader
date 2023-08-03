@@ -487,7 +487,7 @@ public final class SettingsFragment extends PreferenceFragmentCompat {
 
 				final Runnable update = () -> {
 
-					if(General.isTablet(context)) {
+					if(General.isTwoPane(context)) {
 						hideOnScrollPref.setEnabled(false);
 						hideOnScrollPref.setSummary(
 								R.string.pref_appearance_not_possible_in_tablet_mode);

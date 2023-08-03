@@ -20,6 +20,7 @@ package org.quantumbadger.redreader.activities;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
+import android.content.res.Configuration;
 import android.content.res.TypedArray;
 import android.graphics.Color;
 import android.os.Build;
@@ -199,7 +200,7 @@ public abstract class BaseActivity extends AppCompatActivity
 
 			final View outerView;
 
-			final boolean isTablet = General.isTablet(this);
+			final boolean isTwoPane = General.isTwoPane(this);
 
 			final boolean prefBottomToolbar
 					= PrefsUtility.pref_appearance_bottom_toolbar();
@@ -208,7 +209,7 @@ public abstract class BaseActivity extends AppCompatActivity
 
 			final int layoutRes;
 
-			if(prefHideOnScroll && !isTablet) {
+			if(prefHideOnScroll && !isTwoPane) {
 
 				if(baseActivityAllowToolbarHideOnScroll()) {
 					layoutRes = R.layout.rr_actionbar_hide_on_scroll;
@@ -333,6 +334,12 @@ public abstract class BaseActivity extends AppCompatActivity
 		TorCommon.updateTorStatus();
 	}
 
+	@Override
+	public void onConfigurationChanged(@NonNull final Configuration newConfig) {
+		// What a hack!
+		recreate();
+		super.onConfigurationChanged(newConfig);
+	}
 
 	@Override
 	protected void onDestroy() {

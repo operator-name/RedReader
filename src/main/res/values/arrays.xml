@@ -21,6 +21,7 @@
     <string-array name="pref_appearance_twopane">
         <item>@string/pref_appearance_twopane_never</item>
         <item>@string/pref_appearance_twopane_auto</item>
+        <item>@string/pref_appearance_twopane_landscape</item>
         <item>@string/pref_appearance_twopane_force</item>
     </string-array>
 
@@ -28,6 +29,7 @@
     <string-array name="pref_appearance_twopane_return">
         <item>never</item>
         <item>auto</item>
+        <item>landscape</item>
         <item>force</item>
     </string-array>
 

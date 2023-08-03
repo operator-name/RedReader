@@ -183,10 +183,12 @@ object General {
     }
 
     @JvmStatic
-	fun isTablet(context: Context) = when (PrefsUtility.appearance_twopane()) {
+	fun isTwoPane(context: Context) = when (PrefsUtility.appearance_twopane()) {
 		AppearanceTwopane.AUTO -> context.resources.configuration.screenLayout and
 				Configuration.SCREENLAYOUT_SIZE_MASK ==
 				Configuration.SCREENLAYOUT_SIZE_XLARGE
+		AppearanceTwopane.LANDSCAPE -> context.resources.configuration.orientation ==
+				Configuration.ORIENTATION_LANDSCAPE
 
 		AppearanceTwopane.NEVER -> false
 		AppearanceTwopane.FORCE -> true

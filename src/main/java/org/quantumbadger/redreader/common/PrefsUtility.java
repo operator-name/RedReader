@@ -180,7 +180,7 @@ public final class PrefsUtility {
 	// pref_appearance_twopane
 
 	public enum AppearanceTwopane {
-		NEVER, AUTO, FORCE
+		NEVER, AUTO, LANDSCAPE, FORCE
 	}
 
 	@NonNull

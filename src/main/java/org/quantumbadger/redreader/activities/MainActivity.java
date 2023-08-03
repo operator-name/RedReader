@@ -125,7 +125,7 @@ public class MainActivity extends RefreshableActivity
 
 	@Override
 	protected boolean baseActivityAllowToolbarHideOnScroll() {
-		return !General.isTablet(this);
+		return !General.isTwoPane(this);
 	}
 
 	@Override
@@ -155,7 +155,7 @@ public class MainActivity extends RefreshableActivity
 		}
 
 		final SharedPrefsWrapper sharedPreferences = General.getSharedPrefs(this);
-		twoPane = General.isTablet(this);
+		twoPane = General.isTwoPane(this);
 
 		setTitle(R.string.app_name);
 
@@ -587,7 +587,7 @@ public class MainActivity extends RefreshableActivity
 				mRightPane.removeAllViews();
 			}
 
-			twoPane = General.isTablet(this);
+			twoPane = General.isTwoPane(this);
 
 			if(twoPane) {
 				final View layout = getLayoutInflater().inflate(R.layout.main_double, null);
