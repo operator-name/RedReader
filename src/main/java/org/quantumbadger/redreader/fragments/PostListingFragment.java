@@ -731,9 +731,10 @@ public class PostListingFragment extends RRFragment
 
 							final boolean isConnectionWifi = General.isConnectionWifi(activity);
 
+							// Hack: inlining previews looks bad if we're in 2 pane mode
 							final boolean inlinePreviews
 									= PrefsUtility.images_inline_image_previews()
-									.isEnabled(isConnectionWifi);
+									.isEnabled(isConnectionWifi) && !General.isTwoPane(activity);
 
 							final boolean showNsfwPreviews
 									= PrefsUtility.images_inline_image_previews_nsfw();
